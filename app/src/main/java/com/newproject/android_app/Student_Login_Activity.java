@@ -42,10 +42,6 @@ TextView register;
         studentpassword=findViewById(R.id.student_password);
         studlogin=findViewById(R.id.studlogin);
         register=findViewById(R.id.register);
-        if (SharedPreference.getLoggedStatus(getApplicationContext())){
-            startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
-            finish();
-        }
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -36,11 +36,7 @@ DrawerLayout drawerLayout;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id=item.getItemId();
-        if (id==R.id.logout){
-            startActivity(new Intent(getApplicationContext(),Student_Login_Activity.class));
-            finish();
-        }
+
         return true;
     }
 

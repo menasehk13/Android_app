@@ -24,4 +24,7 @@
     <string name="micro_id">MIcro_Id</string>
     <string name="confirm_password">Confirm_Password</string>
     <string name="submit">submit</string>
+    <string name="year">year</string>
+    <string name="search">Search</string>
+    <string name="firstname">Firstname</string>
 </resources>

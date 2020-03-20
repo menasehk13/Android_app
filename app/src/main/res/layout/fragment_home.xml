@@ -1,14 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+<Spinner
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/dep_spinner"
+    android:layout_marginLeft="123dp"
+    android:layout_marginStart="123dp" />
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/department"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sec_spinner"
+        android:layout_below="@+id/dep_spinner"
+        android:layout_marginLeft="123dp"
+        android:layout_marginStart="123dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/section"
+        android:layout_below="@id/dep_spinner"/>
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sec_spinner"
+        android:id="@+id/year_select"
+        android:hint="@string/year"
+        android:inputType="number"
+        android:importantForAutofill="no"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/search"
+    android:text="@string/search"
+    android:layout_below="@id/year_select"
+    android:layout_marginLeft="155dp"
+    android:layout_marginStart="155dp"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search"
+        tools:ignore="UselessLeaf">
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            tools:ignore="UselessParent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/firstname"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/last_name"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/department"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/section"
+                android:gravity="center"/>
 
-</FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/year"
+                android:gravity="center"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
