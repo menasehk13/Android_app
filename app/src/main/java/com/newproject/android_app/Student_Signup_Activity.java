@@ -121,19 +121,21 @@ String gend[]={"MALE","FEMALE"};
             }
             try {
                 int response_code=connection.getResponseCode();
-                if (response_code==HttpURLConnection.HTTP_OK){}
-                InputStream inputStream=connection.getInputStream();
-                BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));
-                StringBuilder builder=new StringBuilder();
-                String line=null;
-                if (null !=(line=reader.readLine())){
-                    builder.append(line);
+                if (response_code==HttpURLConnection.HTTP_OK){
+                    InputStream inputStream=connection.getInputStream();
+                    BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder  builder=new StringBuilder();
+                    String line=null;
+                    if (null!=(line=reader.readLine())){
+                        builder.append(line);
+                    }
+                    return builder.toString();
                 }
-                return builder.toString();
             } catch (IOException e) {
                 e.printStackTrace();
-                return "exception";
+                return "Exception";
             }
+            return String.valueOf(connection);
         }
 
         @Override
