@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Student_Signup_Activity"></activity>
+        <activity android:name=".Student_Signup_Activity">
+        </activity>
         <activity android:name=".Student_Page_Activity" />
         <activity android:name=".Student_Login_Activity" />
         <activity android:name=".Teacher_page_Activity" />

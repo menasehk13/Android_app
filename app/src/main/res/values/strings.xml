@@ -14,4 +14,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logout">LOGOUT</string>
     <string name="to_create_new_account_click_here">to create new account click here</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="gender">Gender</string>
+    <string name="departement">Departement</string>
+    <string name="department">department</string>
+    <string name="section">Section</string>
+    <string name="registered_year">registered year</string>
+    <string name="micro_id">MIcro_Id</string>
+    <string name="confirm_password">Confirm_Password</string>
+    <string name="submit">submit</string>
 </resources>
