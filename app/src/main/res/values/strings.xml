@@ -27,4 +27,9 @@
     <string name="year">year</string>
     <string name="search">Search</string>
     <string name="firstname">Firstname</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="year_you_registered">year you registered</string>
+    <string name="register">Register</string>
+    <string name="studentid">StudentId</string>
 </resources>
