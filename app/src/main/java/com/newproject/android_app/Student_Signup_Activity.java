@@ -84,7 +84,9 @@ public class Student_Signup_Activity extends AppCompatActivity implements AsyncR
     }
 
     @Override
-    public void processFinish(String s) {
+    public void processFinish(String s)
+    {
+        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 }
