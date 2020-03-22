@@ -47,4 +47,5 @@ dependencies {
     implementation files('libs/httpclient-4.3.3.jar')
     implementation files('libs/httpcore-4.3.3.jar')
     implementation files('libs/httpmime-4.3.3.jar')
+    implementation 'androidx.mediarouter:mediarouter:1.0.0'
 }

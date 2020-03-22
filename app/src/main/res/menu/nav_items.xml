@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <group android:checkableBehavior="single">
     <item android:id="@+id/home1" android:title="@string/home"/>
+    <item android:id="@+id/logoutStudent" android:title="@string/logout"/>
 
 </group>
 
