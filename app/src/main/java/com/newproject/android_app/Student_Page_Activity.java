@@ -33,6 +33,7 @@ DrawerLayout drawerLayout;
         navigationView.setNavigationItemSelectedListener(this);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        itemselected(R.id.home1);
 
     }
 
@@ -54,7 +55,7 @@ DrawerLayout drawerLayout;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+     itemselected(item.getItemId());
         return false;
     }
     public void itemselected(int items){
