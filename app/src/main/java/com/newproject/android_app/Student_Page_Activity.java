@@ -35,6 +35,7 @@ DrawerLayout drawerLayout;
         toggle.syncState();
         itemselected(R.id.home1);
 
+
     }
 
     @Override

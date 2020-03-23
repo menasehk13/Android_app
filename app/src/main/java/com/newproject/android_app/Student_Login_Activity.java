@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kosalgeek.asynctask.AsyncResponse;
+import com.kosalgeek.asynctask.EachExceptionsHandler;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
 import java.io.BufferedReader;
@@ -23,8 +24,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -59,6 +62,7 @@ TextView register;
  String Student_password=studentpassword.getText().toString();
       new Login().execute(Student_id,Student_password);
     }
+
 
 
     private class Login extends AsyncTask<String,String,String> {
@@ -125,7 +129,14 @@ TextView register;
             if (s.equalsIgnoreCase("Success")){
                SharedPreference.setLoggedIn(getApplicationContext(),true);
                startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
+            }else if(s.equalsIgnoreCase("$studentId")){
+                Toast.makeText(Student_Login_Activity.this, s, Toast.LENGTH_SHORT).show();
+
             }
+
         }
     }
+
+
+
 }
