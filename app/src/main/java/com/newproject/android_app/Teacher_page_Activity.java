@@ -75,5 +75,3 @@ public void displaySelectedItems(int items){
         return true;
     }
 }
-
-
