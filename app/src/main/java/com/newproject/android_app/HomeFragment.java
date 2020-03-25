@@ -67,7 +67,7 @@ String sec[]={"1","2","3","4"};
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://localhost/Micro/teacherselect.php");
+                url=new URL("http://localhost/HighTech/teacherselect.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }

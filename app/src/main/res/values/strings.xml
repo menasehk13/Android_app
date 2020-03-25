@@ -32,4 +32,7 @@
     <string name="year_you_registered">year you registered</string>
     <string name="register">Register</string>
     <string name="studentid">StudentId</string>
+    <string name="First_Name">first name</string>
+    <string name="First_name">First name</string>
+    <string name="Year" />
 </resources>
