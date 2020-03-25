@@ -10,7 +10,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/first_name"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentNameHomeNav"
@@ -18,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100sp"
                 android:text="Student name"
-                android:textSize="24sp"/>
+                android:textSize="18sp"/>
         </TableRow>
 
         <TableRow>
@@ -26,14 +26,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Last Name"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentLastNameHomeNav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="last name"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="100sp"/>
         </TableRow>
 
@@ -42,14 +42,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID number"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentIdNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID number"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="100sp"/>
         </TableRow>
         <TableRow>
@@ -57,14 +57,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Department"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentDepNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="department"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="100sp"/>
         </TableRow>
 
@@ -73,14 +73,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Year"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentYearNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="year"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="100sp"/>
         </TableRow>
 
@@ -89,14 +89,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Section"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentSecNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="section"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="100sp"/>
         </TableRow>
 
