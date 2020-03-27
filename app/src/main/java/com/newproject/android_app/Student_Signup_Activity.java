@@ -104,7 +104,7 @@ public class Student_Signup_Activity extends AppCompatActivity implements  View.
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://192.168.0.105/HighTech/studentsignup.php");
+                url=new URL("http://192.168.0.105/Micro/studentsignup.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -121,8 +121,8 @@ public class Student_Signup_Activity extends AppCompatActivity implements  View.
                         .appendQueryParameter("Last_name",strings[1])
                         .appendQueryParameter("Gender",strings[2])
                         .appendQueryParameter("Departement",strings[3])
-                        .appendQueryParameter("Year",strings[4])
-                        .appendQueryParameter("Section",strings[5])
+                        .appendQueryParameter("Section",strings[4])
+                        .appendQueryParameter("Year",strings[5])
                         .appendQueryParameter("StudentId",strings[6])
                         .appendQueryParameter("Password",strings[7]);
                 String qurey= builder.build().getEncodedQuery();

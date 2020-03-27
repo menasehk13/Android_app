@@ -67,7 +67,7 @@ TextView textView;
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://192.168.1.7/HighTech/teacherLogin.php");
+                url=new URL("http://192.168.0.105/Micro/teacherLogin.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
