@@ -36,7 +36,7 @@ String jason;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.student_nav, container, false);
+        return inflater.inflate(R.layout.student_nav_home, container, false);
     }
 
     @Override

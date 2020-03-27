@@ -1,11 +1,13 @@
 package com.newproject.android_app;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +15,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,6 +32,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 public class Student_Login_Activity extends AppCompatActivity implements View.OnClickListener {
@@ -72,10 +79,11 @@ TextView register;
            pd.setCancelable(false);
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://192.168.1.10/HighTech/studentlogin.php");
+                url=new URL("http://192.168.0.105/Micro/studentlogin.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -89,7 +97,7 @@ TextView register;
                 Uri.Builder builder=new Uri.Builder().appendQueryParameter("StudentId",strings[0])
                         .appendQueryParameter("Password",strings[1]);
                 OutputStream outputStream=connection.getOutputStream();
-                BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
                 String query=builder.build().getEncodedQuery();
                 writer.write(query);
                 writer.flush();
@@ -105,7 +113,7 @@ TextView register;
                     InputStream inputStream=connection.getInputStream();
                     BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));
                     StringBuilder builder=new StringBuilder();
-                    String line=null;
+                    String line;
                     if(null !=(line=reader.readLine())){
                         builder.append(line);
                     }
@@ -122,9 +130,23 @@ TextView register;
         @Override
         protected void onPostExecute(String s) {
             pd.dismiss();
-            if (s.equalsIgnoreCase("Success")){
-
-               startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
+            if (s.equalsIgnoreCase("wrong StudentID or password")){
+                Toast.makeText(Student_Login_Activity.this, s, Toast.LENGTH_SHORT).show();
+            }else{
+                try {
+                    JSONObject object=new JSONObject(s);
+                    String firstname=object.getString("fname");
+                    String lastname=object.getString("lastname");
+                    String department=object.getString("departemnt");
+                    String studentid=object.getString("studetnID");
+                    String setion=object.getString("Section");
+                    String year=object.getString("year");
+                    PrefManager manager=new PrefManager(getApplicationContext());
+                    manager.saveUserDetail(firstname,lastname,department,studentid,setion,year);
+                    startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
