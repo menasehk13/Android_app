@@ -166,4 +166,9 @@ public class Student_Signup_Activity extends AppCompatActivity implements  View.
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),Student_Login_Activity.class));
+        super.onBackPressed();
+    }
 }

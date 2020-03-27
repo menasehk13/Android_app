@@ -76,17 +76,6 @@ DrawerLayout drawerLayout;
        }
         return true;
     }
-
-
-
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-    }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         selecteditems(item.getItemId());

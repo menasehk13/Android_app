@@ -78,7 +78,8 @@ TextView textView;
                 connection.setConnectTimeout(10000);
                 connection.setDoOutput(true);
                 connection.setDoInput(true);
-                Uri.Builder builder=new Uri.Builder().appendQueryParameter("username",strings[0])
+                Uri.Builder builder=new Uri.Builder()
+                        .appendQueryParameter("username",strings[0])
                         .appendQueryParameter("password",strings[1]);
                 OutputStream outputStream=connection.getOutputStream();
                 String query=builder.build().getEncodedQuery();

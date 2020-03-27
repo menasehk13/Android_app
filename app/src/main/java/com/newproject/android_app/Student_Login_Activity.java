@@ -67,6 +67,12 @@ TextView register;
       new Login().execute(Student_id,Student_password);
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        finish();
+        super.onBackPressed();
+    }
 
     private class Login extends AsyncTask<String,String,String> {
         ProgressDialog pd=new ProgressDialog(Student_Login_Activity.this);
@@ -131,7 +137,7 @@ TextView register;
         protected void onPostExecute(String s) {
             pd.dismiss();
             if (s.equalsIgnoreCase("wrong StudentID or password")){
-                Toast.makeText(Student_Login_Activity.this, s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Student_Login_Activity.this, "Wrong id or password", Toast.LENGTH_SHORT).show();
             }else{
                 try {
                     JSONObject object=new JSONObject(s);
@@ -149,5 +155,6 @@ TextView register;
                 }
             }
         }
+
     }
 }
