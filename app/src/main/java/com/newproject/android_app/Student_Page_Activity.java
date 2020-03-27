@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -37,6 +38,7 @@ DrawerLayout drawerLayout;
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.option_menu,menu);
@@ -56,7 +58,8 @@ DrawerLayout drawerLayout;
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
      itemselected(item.getItemId());
-        return false;
+
+      return true;
     }
     public void itemselected(int items){
         Fragment fragment=null;

@@ -102,7 +102,7 @@ public class Student_Signup_Activity extends AppCompatActivity implements  View.
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://192.168.1.10/HighTech/studentsignup.php");
+                url=new URL("http://192.168.1.7/HighTech/studentsignup.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
