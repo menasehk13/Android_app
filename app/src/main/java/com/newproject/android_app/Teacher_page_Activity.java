@@ -69,7 +69,6 @@ public void displaySelectedItems(int items){
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id=item.getItemId();
         if (id==R.id.logout){
-            SharedPreference.setLoggedIn(getApplicationContext(),false);
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }
         return true;

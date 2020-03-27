@@ -35,4 +35,6 @@
     <string name="First_Name">first name</string>
     <string name="First_name">First name</string>
     <string name="Year" />
+    <string name="student_name">Student name</string>
+    <string name="id_number">ID number</string>
 </resources>

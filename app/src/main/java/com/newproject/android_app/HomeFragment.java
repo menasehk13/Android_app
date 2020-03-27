@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -64,11 +65,27 @@ String sec[]={"1","2","3","4"};
         ProgressDialog pd1=new ProgressDialog(getContext());
         HttpURLConnection httpURLConnection;
         URL url=null;
+
+        @Override
+        protected void onPreExecute() {
+            pd1.setMessage("Loading");
+            pd1.setCancelable(false);
+            pd1.show();
+        }
+
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://localhost/HighTech/teacherselect.php");
+                url=new URL("http://192.168.0.104/Micro/teacherselect.php");
             } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            try {
+                httpURLConnection=(HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setReadTimeout(10000);
+                httpURLConnection.setConnectTimeout(10000);
+            } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;

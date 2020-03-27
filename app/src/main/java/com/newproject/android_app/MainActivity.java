@@ -97,7 +97,7 @@ TextView textView;
                     InputStream inputStream = connection.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
                     StringBuilder builder = new StringBuilder();
-                    String line = null;
+                    String line ;
                     while (null != (line = reader.readLine())){
                         builder.append(line);
                     }
@@ -115,7 +115,7 @@ TextView textView;
             progressDialog.dismiss();
             if (s.equalsIgnoreCase("login succesfully")){
                 Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
-                SharedPreference.setLoggedIn(getApplicationContext(),true);
+
                 startActivity(new Intent(getApplicationContext(),Teacher_page_Activity.class));
                 finish();
             }else if(s.equalsIgnoreCase("exception")){

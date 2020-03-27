@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Student_Page_Activity">
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/table1"
+        tools:ignore="UselessParent">
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
@@ -17,87 +21,93 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100sp"
-                android:text="Student name"
-                android:textSize="18sp"/>
+                android:text="@string/student_name"
+                android:textSize="18sp"
+                android:layout_marginStart="100sp" />
         </TableRow>
 
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last Name"
+                android:text="@string/last_name"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentLastNameHomeNav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="last name"
+                android:text="@string/last_name"
                 android:textSize="18sp"
-                android:layout_marginLeft="100sp"/>
+                android:layout_marginLeft="100sp"
+                android:layout_marginStart="100sp" />
         </TableRow>
 
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID number"
+                android:text="@string/id_number"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentIdNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID number"
+                android:text="@string/id_number"
                 android:textSize="18sp"
-                android:layout_marginLeft="100sp"/>
+                android:layout_marginLeft="100sp"
+                android:layout_marginStart="100sp" />
         </TableRow>
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Department"
+                android:text="@string/department"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentDepNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="department"
+                android:text="@string/department"
                 android:textSize="18sp"
-                android:layout_marginLeft="100sp"/>
+                android:layout_marginLeft="100sp"
+                android:layout_marginStart="100sp" />
         </TableRow>
 
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Year"
+                android:text="@string/year"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentYearNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="year"
+                android:text="@string/year"
                 android:textSize="18sp"
-                android:layout_marginLeft="100sp"/>
+                android:layout_marginLeft="100sp"
+                android:layout_marginStart="100sp" />
         </TableRow>
 
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Section"
+                android:text="@string/section"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/studentSecNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="section"
+                android:text="@string/section"
                 android:textSize="18sp"
-                android:layout_marginLeft="100sp"/>
+                android:layout_marginLeft="100sp"
+                android:layout_marginStart="100sp" />
         </TableRow>
 
     </TableLayout>

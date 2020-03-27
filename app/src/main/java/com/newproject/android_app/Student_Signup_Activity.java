@@ -21,6 +21,8 @@ import android.widget.Toast;
 import com.kosalgeek.asynctask.AsyncResponse;
 import com.kosalgeek.asynctask.PostResponseAsyncTask;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -102,7 +104,7 @@ public class Student_Signup_Activity extends AppCompatActivity implements  View.
         @Override
         protected String doInBackground(String... strings) {
             try {
-                url=new URL("http://192.168.1.10/HighTech/studentsignup.php");
+                url=new URL("http://192.168.0.105/HighTech/studentsignup.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -163,4 +165,5 @@ public class Student_Signup_Activity extends AppCompatActivity implements  View.
             }
         }
     }
+
 }

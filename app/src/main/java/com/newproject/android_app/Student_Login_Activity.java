@@ -13,9 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kosalgeek.asynctask.AsyncResponse;
-import com.kosalgeek.asynctask.EachExceptionsHandler;
-import com.kosalgeek.asynctask.PostResponseAsyncTask;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,10 +23,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -35,6 +32,10 @@ public class Student_Login_Activity extends AppCompatActivity implements View.On
 EditText studentid,studentpassword;
 Button studlogin;
 TextView register;
+    JSONObject object;
+    String  java="name";
+    HashMap<String,String>hashMap=new HashMap<>();
+    TextView view;
 
 
     @Override
@@ -45,6 +46,7 @@ TextView register;
         studentpassword=findViewById(R.id.student_password);
         studlogin=findViewById(R.id.studlogin);
         register=findViewById(R.id.register);
+        view.getText();
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,11 +63,15 @@ TextView register;
  String Student_id=studentid.getText().toString();
  String Student_password=studentpassword.getText().toString();
       new Login().execute(Student_id,Student_password);
+
     }
 
 
 
-    private class Login extends AsyncTask<String,String,String> {
+
+    public class Login extends AsyncTask<String, String, String> {
+
+
         ProgressDialog pd=new ProgressDialog(Student_Login_Activity.this);
         URL url=null;
         HttpURLConnection connection;
@@ -77,9 +83,9 @@ TextView register;
         }
 
         @Override
-        protected String doInBackground(String... strings) {
+        public String doInBackground(String... strings) {
             try {
-                url=new URL("http://192.168.1.10/HighTech/studentlogin.php");
+                url=new URL("http://192.168.0.105/Micro/studentlogin.php");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -109,33 +115,49 @@ TextView register;
                     InputStream inputStream=connection.getInputStream();
                     BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));
                     StringBuilder builder=new StringBuilder();
-                    String line=null;
+                    String line;
                     if(null !=(line=reader.readLine())){
                         builder.append(line);
+
                     }
-                    return builder.toString();
+                    return builder.toString().trim();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
                 return "exception";
             }
 
+
             return String.valueOf(connection);
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            pd.dismiss();
-            if (s.equalsIgnoreCase("Success")){
-               SharedPreference.setLoggedIn(getApplicationContext(),true);
-               startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
-            }else if(s.equalsIgnoreCase("$studentId")){
-                Toast.makeText(Student_Login_Activity.this, s, Toast.LENGTH_SHORT).show();
 
+        @Override
+        public void onPostExecute(String s) {
+            pd.dismiss();
+            try {
+                JSONObject object=new JSONObject(s);
+                String first=object.getString("fname");
+                String last=object.getString("lastname");
+                String departement=object.getString("departemnt");
+                String section=object.getString("Section");
+                String Year=object.getString("year");
+                String studentid=object.getString("studetnID");
+              PrefManager manager=new PrefManager(getApplicationContext());
+              manager.saveUserDetail(first,last,departement,studentid,section,Year);
+               startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
 
         }
+
+
     }
+
+
+
+
 
 
 
