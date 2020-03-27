@@ -123,7 +123,7 @@ TextView register;
         protected void onPostExecute(String s) {
             pd.dismiss();
             if (s.equalsIgnoreCase("Success")){
-               SharedPreference.setLoggedIn(getApplicationContext(),true);
+
                startActivity(new Intent(getApplicationContext(),Student_Page_Activity.class));
             }
         }
